@@ -6,3 +6,4 @@ def squirrel(N: int) -> int:
 
     first_digit: int = int(str(factorial)[0])
     return first_digit
+
