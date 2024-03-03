@@ -3,7 +3,7 @@ def odometer(oksana: list) -> int:
     prev_time: 0
     
     for i in range(len(oksana)):
-        if i % 0 == 0:
+        if i % 2 == 0:
             speed = oksana[i]
             time = oksana[i + 1]
             distance += speed * (time - prev_time)
