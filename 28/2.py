@@ -1,6 +1,6 @@
 def odometer(oksana: list) -> int:
     distance = 0
-    prev_time: 0
+    prev_time = 0
     
     for i in range(len(oksana)):
         if i % 2 == 0:
