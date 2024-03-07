@@ -1,4 +1,4 @@
-def SynchronizingTables(N: int, ids: List[int], salary: List[int]) -> List[int]:
+def SynchronizingTables(N: int, ids: list[int], salary: list[int]) -> list[int]:
     sorted_ids = sorted(ids)
     sorted_salary = sorted(salary)
 
