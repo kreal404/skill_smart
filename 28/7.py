@@ -24,9 +24,8 @@ def WordSearch(line_length: int, s: str, subs: str) -> list[int]:
         new_lines.append(current_line)
 
     for new_line in new_lines:
-        result.append(int(subs in new_line.strip()))
+        result.append(int(subs in new_line.split()))
 
     return result
-
 
 
