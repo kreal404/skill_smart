@@ -1,4 +1,4 @@
-def text_to_matrix(s, encode):
+def text_to_matrix(s: str, encode: bool) -> list[list[str]]:
     if encode:
         s = s.replace(" ", "")
         n = len(s)
@@ -17,7 +17,7 @@ def text_to_matrix(s, encode):
     return matrix
 
 
-def transpose_matrix(matrix, rows, columns):
+def transpose_matrix(matrix: list[list[str]], rows: int, columns: int) -> list[list[str]]:
     transposed_matrix = []
     for column in range(columns):
         transposed_matrix.append([matrix[row][column] for row in range(rows) if column < len(matrix[row])])
@@ -25,11 +25,11 @@ def transpose_matrix(matrix, rows, columns):
     return transposed_matrix
 
 
-def matrix_to_text(matrix):
+def matrix_to_text(matrix: list[list[str]]) -> str:
     return " ".join(["".join(row) for row in matrix])
 
 
-def TheRabbitsFoot(s, encode):
+def TheRabbitsFoot(s: str, encode: bool) -> str:
     matrix = text_to_matrix(s, encode)
     rows = len(matrix)
     columns = len(matrix[0])
