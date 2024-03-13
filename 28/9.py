@@ -26,7 +26,12 @@ def transpose_matrix(matrix: list[list[str]], rows: int, columns: int) -> list[l
 
 
 def matrix_to_text(matrix: list[list[str]]) -> str:
-    return " ".join(["".join(row) for row in matrix])
+    if encode:
+        result = " ".join(["".join(row) for row in matrix])
+    else:
+        result = "".join(["".join(row) for row in matrix])
+
+    return result
 
 
 def TheRabbitsFoot(s: str, encode: bool) -> str:
@@ -36,7 +41,7 @@ def TheRabbitsFoot(s: str, encode: bool) -> str:
 
     transposed_matrix = transpose_matrix(matrix, rows, columns)
 
-    result = matrix_to_text(transposed_matrix)
+    result = matrix_to_text(transposed_matrix, encode)
 
     return result
 
