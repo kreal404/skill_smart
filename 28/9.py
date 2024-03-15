@@ -1,4 +1,4 @@
-def text_to_matrix(s: str, encode: bool) -> list[list[str]]:
+def text_to_matrix(s: str, encode: bool) -> list:
     if encode:
         s = s.replace(" ", "")
         n = len(s)
@@ -17,15 +17,14 @@ def text_to_matrix(s: str, encode: bool) -> list[list[str]]:
     return matrix
 
 
-def transpose_matrix(matrix: list[list[str]], rows: int, columns: int) -> list[list[str]]:
+def transpose_matrix(matrix: list, rows: int, columns: int) -> list:
     transposed_matrix = []
     for column in range(columns):
         transposed_matrix.append([matrix[row][column] for row in range(rows) if column < len(matrix[row])])
-
     return transposed_matrix
 
 
-def matrix_to_text(matrix: list[list[str]]) -> str:
+def matrix_to_text(matrix: list, encode: bool) -> str:
     if encode:
         result = " ".join(["".join(row) for row in matrix])
     else:
@@ -35,6 +34,9 @@ def matrix_to_text(matrix: list[list[str]]) -> str:
 
 
 def TheRabbitsFoot(s: str, encode: bool) -> str:
+    if encode and not s.strip():
+        return ""
+
     matrix = text_to_matrix(s, encode)
     rows = len(matrix)
     columns = len(matrix[0])
