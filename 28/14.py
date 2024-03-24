@@ -5,6 +5,9 @@ def Unmanned(L, N, track):
     for traffic_light_info in track:
         pos, red, green = traffic_light_info
 
+        if pos > L:
+            break
+
         time += pos - last_pos
 
         traffic_light = time % (red + green)
