@@ -16,15 +16,14 @@ def TankRush(H1: int, W1: int, S1: str, H2: int, W2: int, S2: str) -> bool:
 
     for i in range(H1 - H2 + 1):
         for j in range(W1 - W2 + 1):
-            count = 0
-            
+            count = []
+
             for x in range(H2):
                 for y in range(W2):
-                    count += total_map[i + x][j + y] == tanks_map[x][y]
+                    count.append(total_map[i + x][j + y] == tanks_map[x][y])
 
-            if count == H2 + W2:
+            if set(count) == {True}:
                 return True
 
     return False
-
 
