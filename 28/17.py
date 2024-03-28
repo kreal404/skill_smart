@@ -1,4 +1,4 @@
-def LineAnalysis(line):
+def LineAnalysis(line: str) -> bool:
     if line[0] != '*' or line[-1] != '*':
         return False
 
