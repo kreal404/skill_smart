@@ -1,4 +1,4 @@
-def sherlock_valid_string(s: str) -> bool:
+def SherlockValidString(s: str) -> bool:
     char_frequencies = {}
     for char in set(s):
         char_frequencies[char] = s.count(char)
@@ -12,5 +12,4 @@ def sherlock_valid_string(s: str) -> bool:
         diff += abs(f - max_freq)
 
     return diff <= 1
-
 
