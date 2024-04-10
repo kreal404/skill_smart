@@ -1,18 +1,13 @@
-
-def transform(lst: list[int], n: int) -> list[int]:
-    result = []
-
-    for i in range(n - 1):
-        for j in range(n - i - 1):
+def S(A: list) -> list:
+    B = []
+    for i in range(len(A)):
+        for j in range(len(A) - i):
             k = i + j
-            result.append(max(lst[j:k+1]))
+            B.append(max(A[j:k+1]))
+    return B
 
-    return result[::-1]
 
-
-def TransformTransform(a: list[int], n: int) -> bool:
-    first = transform(a, n)
-    second = transform(first, len(first))
-
-    return sum(second) % 2 == 0
+def TransformTransform(A, N):
+    B = S(S(A))
+    return sum(B) % 2 == 0
 
