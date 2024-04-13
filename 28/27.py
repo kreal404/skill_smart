@@ -1,10 +1,8 @@
 def is_sorted(arr):
     return all(arr[i] <= arr[i+1] for i in range(len(arr)-1))
 
-def Football(F, N):
-    if is_sorted(F):
-        return True
 
+def Football(F, N):
     for i in range(N):
         for j in range(i+1, N):
             F[i], F[j] = F[j], F[i]
@@ -22,6 +20,5 @@ def Football(F, N):
                 if is_sorted(F):
                     return True
                 F[i:start+1] = reversed(F[i:start+1])
-
     return False
 
