@@ -1,4 +1,4 @@
-def print_evens(lst: list, i: int = 0) -> None:
+def print_evens(lst: list, i: int) -> None:
     if i >= len(lst):
         return
 

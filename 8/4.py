@@ -1,6 +1,4 @@
-def is_palindrome(s: str, start: int = 0, end: int = None) -> bool:
-    if end is None:
-        end = len(s) - 1
+def is_palindrome(s: str, start: int, end: int) -> bool:
     s = s.lower()
     if start >= end:
         return True
