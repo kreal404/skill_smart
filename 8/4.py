@@ -1,7 +1,8 @@
-def is_palindrome(s: str, start: int, end: int) -> bool:
-    s = s.lower()
-    if start >= end:
-        return True
-    elif s[start] != s[end]:
-        return False
-    return is_palindrome(s, start + 1, end - 1)
+def is_palindrome(s):
+    def helper(start, end):
+        if start >= end:
+            return True
+        if s[start] != s[end]:
+            return False
+        return helper(start + 1, end - 1)
+    return helper(0, len(s) - 1)
