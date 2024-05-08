@@ -1,10 +1,14 @@
-def generate_parentheses(n, open_brackets, close_brackets, s):
-    if open_brackets == n and close_brackets == n:
-        print(s)
-        return
+def generate_parentheses(n: int) -> list[str]:
+    result = []
+    helper(n, 0, 0, '', result)
+    return result
 
-    if open_brackets < n:
-        generate_parentheses(n, open_brackets + 1, close_brackets, s + '(')
+def helper(n: int, open_brackets: int, close_brackets: int, s:list[str], result:list[str]):
+    if open_brackets == close_brackets == n:
+        result.append(s)
+    else:
+        if open_brackets < n:
+            helper(n, open_brackets + 1, close_brackets, s + '(', result)
+        if close_brackets < open_brackets:
+            helper(n, open_brackets, close_brackets + 1, s + ')', result)
 
-    if close_brackets < open_brackets:
-        generate_parentheses(n, open_brackets, close_brackets + 1, s + ')')
