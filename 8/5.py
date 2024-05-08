@@ -1,7 +1,10 @@
-def print_evens(lst: list, i: int) -> None:
-    if i >= len(lst):
-        return
+def print_evens(lst: list) -> None:
+    helper(lst, 0)
 
-    if lst[i] % 2 == 0:
-        print(lst[i])
-    print_evens(lst, i+1)
+def helper(lst: list, index: int) -> None:
+    if index >= len(lst):
+        return
+    if lst[index] % 2 == 0:
+        print(lst[index])
+    helper(lst, index + 1)
+
